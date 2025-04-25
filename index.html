@@ -30,11 +30,15 @@
             </div>
 
             <div class="header-right">
-                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965) 084-29-29</a>
+                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965)
+                    084-29-29</a>
 
-                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn" onclick="window.location.href='cart.html'">
+                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn"
+                    onclick="window.location.href='cart.html'">
 
-                <a href="profile.html" class="h-nav_item">Личный кабинет</a>
+                <a href="profile.html" class="h-nav_item">Профиль</a>
+                <label for="auth-toggle" class="h-nav_item">Войти</label>
+                <a href="admin.html" class="h-nav_item">Я админ</a>
             </div>
         </div>
     </header>
@@ -236,31 +240,60 @@
 
                 <div class="questions_array title_gap">
                     <div class="question">
-                        <p class="desc">Как выбрать чай по вкусу?</p>
-                        <img src="assets/media/faq/off-icon.svg" alt="">
+                        <div class="question-header">
+                            <p class="desc">Как выбрать чай по вкусу?</p>
+                            <img src="assets/media/faq/off-icon.svg" alt="" class="toggle-icon">
+                        </div>
+                        <div class="question-answer subtitile_desc white">
+                            <p>Для выбора чая по вкусу рекомендуем обратить внимание на тип чая (черный, зеленый,
+                                травяной) и его ароматические добавки. Вы можете заказать наш пробный набор, чтобы
+                                познакомиться с разными вкусами.</p>
+                        </div>
                     </div>
 
                     <div class="question">
-                        <p class="desc">Как хранить чай, чтобы сохранить свежесть?</p>
-                        <img src="assets/media/faq/off-icon.svg" alt="">
+                        <div class="question-header">
+                            <p class="desc">Как хранить чай, чтобы сохранить свежесть?</p>
+                            <img src="assets/media/faq/off-icon.svg" alt="" class="toggle-icon">
+                        </div>
+                        <div class="question-answer">
+                            <p>Чай лучше хранить в герметичной упаковке в прохладном темном месте, подальше от сильно
+                                пахнущих продуктов. Идеальная температура - комнатная.</p>
+                        </div>
                     </div>
 
                     <div class="question">
-                        <p class="desc">Что сделать для заказа, как долго ждать доставку?</p>
-                        <img src="assets/media/faq/off-icon.svg" alt="">
+                        <div class="question-header">
+                            <p class="desc">Что сделать для заказа, как долго ждать доставку?</p>
+                            <img src="assets/media/faq/off-icon.svg" alt="" class="toggle-icon">
+                        </div>
+                        <div class="question-answer">
+                            <p>Для выбора чая по вкусу рекомендуем обратить внимание на тип чая (черный, зеленый,
+                                травяной) и его ароматические добавки. Вы можете заказать наш пробный набор, чтобы
+                                познакомиться с разными вкусами.</p>
+                        </div>
                     </div>
 
                     <div class="question">
-                        <p class="desc">Почему разный вкус от партии к партии?</p>
-                        <img src="assets/media/faq/off-icon.svg" alt="">
-                    </div>
-
-                    <div class="question">
-                        <p class="desc">Как хранить чай, чтобы сохранить свежесть?</p>
-                        <img src="assets/media/faq/off-icon.svg" alt="">
+                        <div class="question-header">
+                            <p class="desc">Почему разный вкус от партии к партии?</p>
+                            <img src="assets/media/faq/off-icon.svg" alt="" class="toggle-icon">
+                        </div>
+                        <div class="question-answer">
+                            <p>Чай лучше хранить в герметичной упаковке в прохладном темном месте, подальше от сильно
+                                пахнущих продуктов. Идеальная температура - комнатная.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <script>
+                document.querySelectorAll('.question').forEach(question => {
+                    question.addEventListener('click', () => {
+                        question.classList.toggle('active');
+                    });
+                });
+            </script>
         </div>
 
         <!-- footer -->
@@ -308,6 +341,36 @@
         </footer>
     </main>
 
+    <!-- авторизация -->
+    <input type="checkbox" id="auth-toggle" class="modal-toggle">
+
+    <div class="modal-overlay">
+        <div class="modal-window">
+
+            <label for="auth-toggle" class="close-btn">×</label>
+
+            <div class="form-switcher">
+                <input type="radio" id="show-login" name="form-type" checked>
+                <label for="show-login">Вход</label>
+
+                <input type="radio" id="show-register" name="form-type">
+                <label for="show-register">Регистрация</label>
+            </div>
+
+            <div class="auth-form login-form">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+
+            <div class="auth-form register-form">
+                <input type="text" placeholder="Ваше имя">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

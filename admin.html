@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тизана</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/media/logo/favicon.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="header_content container_wide">
+            <div class="header-left">
+                <nav class="h-nav">
+                    <a href="index.html" class="h-nav_item">Главная</a>
+                    <a href="catalog.html" class="h-nav_item">Каталог</a>
+                    <a href="about.html" class="h-nav_item">О нас</a>
+                </nav>
+            </div>
+
+            <div class="header-right">
+
+                <a href="profile.html" class="h-nav_item">Личный кабинет</a>
+
+                <a href="admin.html" class="h-nav_item">Админ</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- admin -->
+        <div class="admin">
+            <div class="admin-header container">
+                <h1 class="title-2">Управление каталогом</h1>
+                <div class="admin-actions">
+                    <button class="add-btn">
+                        Добавить товар
+                    </button>
+                </div>
+            </div>
+
+            <div class="admin-table-container container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Изображение</th>
+                            <th>Название</th>
+                            <th>Тип</th>
+                            <th>Цена</th>
+                            <th>Наличие</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>234657</td>
+                            <td><img src="assets/media/favorites/1_item.png" class="table-img"></td>
+                            <td>Медовый закат</td>
+                            <td>Фруктовый</td>
+                            <td>450 ₽</td>
+                            <td><span class="in-stock">В наличии</span></td>
+                            <td>
+                                <button class="edit-btn">Редактировать</button>
+                                <button class="delete-btn">Удалить</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>234658</td>
+                            <td><img src="assets/media/favorites/2_item.png" class="table-img"></td>
+                            <td>Шёпот сакуры</td>
+                            <td>Зеленый</td>
+                            <td>520 ₽</td>
+                            <td><span class="in-stock">В наличии</span></td>
+                            <td>
+                                <button class="edit-btn">Редактировать</button>
+                                <button class="delete-btn">Удалить</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>27857</td>
+                            <td><img src="assets/media/favorites/3_item.png" class="table-img"></td>
+                            <td>Тайга</td>
+                            <td>Травяной</td>
+                            <td>390 ₽</td>
+                            <td><span class="out-stock">Нет в наличии</span></td>
+                            <td>
+                                <button class="edit-btn">Редактировать</button>
+                                <button class="delete-btn">Удалить</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
