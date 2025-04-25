@@ -16,24 +16,36 @@
 
     <!-- header -->
     <header class="header">
-        <div class="header_content container_wide">
-            <div class="header-left">
-                <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
+        <div class="header-content container_wide">
+            <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
 
-                <nav class="h-nav">
+            <input type="checkbox" id="burger-toggle" class="burger-toggle">
+            <label for="burger-toggle" class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+
+                <div class="h-nav">
                     <a href="index.html" class="h-nav_item">Главная</a>
                     <a href="catalog.html" class="h-nav_item">Каталог</a>
                     <a href="#receps" class="h-nav_item">Советы</a>
                     <a href="#questions" class="h-nav_item">FAQ</a>
                     <a href="about.html" class="h-nav_item">О нас</a>
-                </nav>
-            </div>
+                </div>
 
-            <div class="header-right">
-                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965) 084-29-29</a>
+                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965)
+                    084-29-29</a>
 
-                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn" onclick="window.location.href='cart.html'">
-            </div>
+                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn"
+                    onclick="window.location.href='cart.html'">
+
+                <a href="profile.html" class="h-nav_item">Профиль</a>
+                <label for="auth-toggle" class="h-nav_item">Войти</label>
+                <a href="admin.html" class="h-nav_item btn_mob">Я админ</a>
+            </nav>
         </div>
     </header>
 
@@ -43,11 +55,15 @@
                 <h2 class="title-2">Каталог</h2>
                 <p class="subtitile">Главная / Каталог</p>
 
+                <div class="filter_mob title-3"><img src="assets/media/icons/filter-icon.png" alt="">Открыть фильтры
+                </div>
+
                 <div class="catalog_content title_gap">
                     <div class="filter">
                         <h2 class="title-3 left">Фильтры</h2>
-                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По типу чая</p>
-                        
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По типу
+                            чая</p>
+
                         <div class="filter-group">
                             <input type="checkbox" id="black-tea" class="filter-checkbox">
                             <label for="black-tea" class="filter-label">
@@ -82,7 +98,8 @@
 
                         <hr class="filter-hr">
 
-                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По крепкости</p>
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По
+                            крепкости</p>
 
                         <div class="filter-group">
                             <input type="checkbox" id="light-tea" class="filter-checkbox">
@@ -111,7 +128,8 @@
                         <hr class="filter-hr">
 
                         <img src="assets/media/catalog/catalog_fil-btn.svg" alt="" class="filter-btn">
-                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">Сбросить фильтры</p>
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">Сбросить
+                            фильтры</p>
                     </div>
 
                     <div class="catalog_cards">
@@ -126,14 +144,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3">Медовый закат</h2>
                                 <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234657</p></pre>
                                 <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card yell_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/2_item.png" alt="" class="fav-img">
@@ -145,14 +163,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3 white">Шёпот сакуры</h2>
                                 <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: 234657</span></p></pre>
                                 <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card green_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/3_item.png" alt="" class="fav-img">
@@ -164,14 +182,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3 white">Тайга</h2>
                                 <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: 2757</p></pre>
                                 <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card white_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/4_item.png" alt="" class="fav-img">
@@ -183,7 +201,7 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3">Персиковый румянец</h2>
                                 <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234857</p></pre>
@@ -202,14 +220,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3">Медовый закат</h2>
                                 <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234657</p></pre>
                                 <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card yell_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/2_item.png" alt="" class="fav-img">
@@ -221,14 +239,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3 white">Шёпот сакуры</h2>
                                 <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: 234657</span></p></pre>
                                 <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card green_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/3_item.png" alt="" class="fav-img">
@@ -240,14 +258,14 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3 white">Тайга</h2>
                                 <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: 2757</p></pre>
                                 <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
                             </div>
                         </div>
-        
+
                         <div class="fav-card white_dec catalog_card" onclick="window.location.href='product.html'">
                             <div class="fav-img_container">
                                 <img src="assets/media/favorites/4_item.png" alt="" class="fav-img">
@@ -259,7 +277,7 @@
                                     src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
                                     alt="shopping-basket-2--v2" />
                             </div>
-        
+
                             <div class="fav_text_container">
                                 <h2 class="title-3">Персиковый румянец</h2>
                                 <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234857</p></pre>
@@ -317,6 +335,36 @@
         </div>
     </footer>
 
+    <!-- авторизация -->
+    <input type="checkbox" id="auth-toggle" class="modal-toggle">
+
+    <div class="modal-overlay">
+        <div class="modal-window">
+
+            <label for="auth-toggle" class="close-btn">×</label>
+
+            <div class="form-switcher">
+                <input type="radio" id="show-login" name="form-type" checked>
+                <label for="show-login">Вход</label>
+
+                <input type="radio" id="show-register" name="form-type">
+                <label for="show-register">Регистрация</label>
+            </div>
+
+            <div class="auth-form login-form">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+
+            <div class="auth-form register-form">
+                <input type="text" placeholder="Ваше имя">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

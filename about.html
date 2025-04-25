@@ -16,25 +16,36 @@
 
     <!-- header -->
     <header class="header">
-        <div class="header_content container_wide">
-            <div class="header-left">
-                <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
+        <div class="header-content container_wide">
+            <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
 
-                <nav class="h-nav">
+            <input type="checkbox" id="burger-toggle" class="burger-toggle">
+            <label for="burger-toggle" class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+
+                <div class="h-nav">
                     <a href="index.html" class="h-nav_item">Главная</a>
                     <a href="catalog.html" class="h-nav_item">Каталог</a>
                     <a href="#receps" class="h-nav_item">Советы</a>
                     <a href="#questions" class="h-nav_item">FAQ</a>
                     <a href="about.html" class="h-nav_item">О нас</a>
-                </nav>
-            </div>
+                </div>
 
-            <div class="header-right">
-                <div class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965) 084-29-29</div>
+                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965)
+                    084-29-29</a>
 
                 <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn"
                     onclick="window.location.href='cart.html'">
-            </div>
+
+                <a href="profile.html" class="h-nav_item">Профиль</a>
+                <label for="auth-toggle" class="h-nav_item">Войти</label>
+                <a href="admin.html" class="h-nav_item btn_mob">Я админ</a>
+            </nav>
         </div>
     </header>
 
@@ -53,6 +64,7 @@
                         почувствовать гармонию. Мы верим, что хороший чай должен быть доступен каждому, и стремимся
                         сделать ваш выбор простым и приятным.
                     </p>
+
                     <img src="assets/media/banner/banner_btn1.svg" alt="" class="banner-btn">
                 </div>
 
@@ -70,7 +82,8 @@
                     <p class="desc"><img src="assets/media/about/dload-icon.svg" alt="">Сертификаты качества <br>
                         (Скачать, PDF, 2.4 МБ)</p>
                     <p class="desc"><img src="assets/media/about/dload-icon.svg" alt="">Политика конфиденциальности
-                        <br>(Скачать, PDF, 1.1 МБ)</p>
+                        <br>(Скачать, PDF, 1.1 МБ)
+                    </p>
                 </div>
 
                 <div class="adv_items">
@@ -126,6 +139,36 @@
         </div>
     </footer>
 
+    <!-- авторизация -->
+    <input type="checkbox" id="auth-toggle" class="modal-toggle">
+
+    <div class="modal-overlay">
+        <div class="modal-window">
+
+            <label for="auth-toggle" class="close-btn">×</label>
+
+            <div class="form-switcher">
+                <input type="radio" id="show-login" name="form-type" checked>
+                <label for="show-login">Вход</label>
+
+                <input type="radio" id="show-register" name="form-type">
+                <label for="show-register">Регистрация</label>
+            </div>
+
+            <div class="auth-form login-form">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+
+            <div class="auth-form register-form">
+                <input type="text" placeholder="Ваше имя">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

@@ -16,25 +16,36 @@
 
     <!-- header -->
     <header class="header">
-        <div class="header_content container_wide">
-            <div class="header-left">
-                <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
+        <div class="header-content container_wide">
+            <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
 
-                <nav class="h-nav">
+            <input type="checkbox" id="burger-toggle" class="burger-toggle">
+            <label for="burger-toggle" class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+
+                <div class="h-nav">
                     <a href="index.html" class="h-nav_item">Главная</a>
                     <a href="catalog.html" class="h-nav_item">Каталог</a>
                     <a href="#receps" class="h-nav_item">Советы</a>
                     <a href="#questions" class="h-nav_item">FAQ</a>
                     <a href="about.html" class="h-nav_item">О нас</a>
-                </nav>
-            </div>
+                </div>
 
-            <div class="header-right">
                 <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965)
                     084-29-29</a>
 
-                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn">
-            </div>
+                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn"
+                    onclick="window.location.href='cart.html'">
+
+                <a href="profile.html" class="h-nav_item">Профиль</a>
+                <label for="auth-toggle" class="h-nav_item">Войти</label>
+                <a href="admin.html" class="h-nav_item btn_mob">Я админ</a>
+            </nav>
         </div>
     </header>
 
@@ -57,7 +68,7 @@
                                     <pre><p class="subtitile left" style="opacity: 0.5;">В наличии    Артикул: 234657</p></pre>
                                     <p class="subtitile_desc" style="padding-top: 25px;">Крепость: высокая
                                         Аромат: бархатистый, с лёгкой терпкостью
-                                        </p>
+                                    </p>
                                 </div>
                             </div>
 
@@ -82,7 +93,7 @@
                                     <pre><p class="subtitile left" style="opacity: 0.5;">В наличии    Артикул: 234657</p></pre>
                                     <p class="subtitile_desc" style="padding-top: 25px;">Крепость: высокая
                                         Аромат: бархатистый, с лёгкой терпкостью
-                                        </p>
+                                    </p>
                                 </div>
                             </div>
 
@@ -103,12 +114,15 @@
                         <div class="cart_exe-text">
                             <div class="cart_exe-item">
                                 <h2 class="title-3 left">Ваша корзина</h2>
-                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">1 товар</p>
+                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">1
+                                    товар</p>
                             </div>
 
                             <div class="cart_exe-item">
-                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">Товары(2)</p>
-                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">900 ₽</p>
+                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">
+                                    Товары(2)</p>
+                                <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">
+                                    900 ₽</p>
                             </div>
 
                             <hr class="filter-hr">
@@ -167,6 +181,36 @@
         </div>
     </footer>
 
+    <!-- авторизация -->
+    <input type="checkbox" id="auth-toggle" class="modal-toggle">
+
+    <div class="modal-overlay">
+        <div class="modal-window">
+
+            <label for="auth-toggle" class="close-btn">×</label>
+
+            <div class="form-switcher">
+                <input type="radio" id="show-login" name="form-type" checked>
+                <label for="show-login">Вход</label>
+
+                <input type="radio" id="show-register" name="form-type">
+                <label for="show-register">Регистрация</label>
+            </div>
+
+            <div class="auth-form login-form">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+
+            <div class="auth-form register-form">
+                <input type="text" placeholder="Ваше имя">
+                <input type="email" placeholder="Ваш email">
+                <input type="password" placeholder="Пароль">
+                <img src="assets/media/icons/login-btn.svg" alt="" class="auth-btn">
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
