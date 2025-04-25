@@ -1,0 +1,9 @@
+Fonts used in this design:
+
+Font: Cinzel
+Author: Natanael Gama
+Url: http://www.fontsquirrel.com/fonts/cinzel
+
+Font: Parisienne
+Author: Astigmatic
+Url: https://www.fontsquirrel.com/fonts/parisienne

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="assets/media/logo/favicon.png" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cuprum:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header class="header">
+        <div class="header_content container_wide">
+            <div class="header-left">
+                <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
+
+                <nav class="h-nav">
+                    <a href="index.html" class="h-nav_item">Главная</a>
+                    <a href="catalog.html" class="h-nav_item">Каталог</a>
+                    <a href="#receps" class="h-nav_item">Советы</a>
+                    <a href="#questions" class="h-nav_item">FAQ</a>
+                    <a href="about.html" class="h-nav_item">О нас</a>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965) 084-29-29</a>
+
+                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn" onclick="window.location.href='cart.html'">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="catalog">
+            <div class="container">
+                <h2 class="title-2">Каталог</h2>
+                <p class="subtitile">Главная / Каталог</p>
+
+                <div class="catalog_content title_gap">
+                    <div class="filter">
+                        <h2 class="title-3 left">Фильтры</h2>
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По типу чая</p>
+                        
+                        <div class="filter-group">
+                            <input type="checkbox" id="black-tea" class="filter-checkbox">
+                            <label for="black-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Чёрный</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="green-tea" class="filter-checkbox">
+                            <label for="green-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Зелёный</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="herbal-tea" class="filter-checkbox">
+                            <label for="herbal-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Травяной</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="fruit-tea" class="filter-checkbox">
+                            <label for="fruit-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Фруктовый</span>
+                            </label>
+                        </div>
+
+                        <hr class="filter-hr">
+
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">По крепкости</p>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="light-tea" class="filter-checkbox">
+                            <label for="light-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Легкий</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="hard-tea" class="filter-checkbox">
+                            <label for="hard-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Крепкий</span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <input type="checkbox" id="norm-tea" class="filter-checkbox">
+                            <label for="norm-tea" class="filter-label">
+                                <span class="custom-checkbox"></span>
+                                <span class="tea-type-name">Средний</span>
+                            </label>
+                        </div>
+
+                        <hr class="filter-hr">
+
+                        <img src="assets/media/catalog/catalog_fil-btn.svg" alt="" class="filter-btn">
+                        <p class="subtitile left" style="color: #2D431D; opacity: 0.7; padding-bottom: 12px;">Сбросить фильтры</p>
+                    </div>
+
+                    <div class="catalog_cards">
+                        <div class="fav-card pink_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/1_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/1_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3">Медовый закат</h2>
+                                <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234657</p></pre>
+                                <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card yell_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/2_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/2_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3 white">Шёпот сакуры</h2>
+                                <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: 234657</span></p></pre>
+                                <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card green_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/3_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/3_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3 white">Тайга</h2>
+                                <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: 2757</p></pre>
+                                <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card white_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/4_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/4_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3">Персиковый румянец</h2>
+                                <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234857</p></pre>
+                                <img src="assets/media/icons/button_tocart4.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+
+                        <div class="fav-card pink_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/1_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/1_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3">Медовый закат</h2>
+                                <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234657</p></pre>
+                                <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card yell_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/2_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/2_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3 white">Шёпот сакуры</h2>
+                                <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: 234657</span></p></pre>
+                                <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card green_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/3_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/3_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3 white">Тайга</h2>
+                                <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: 2757</p></pre>
+                                <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+        
+                        <div class="fav-card white_dec catalog_card" onclick="window.location.href='product.html'">
+                            <div class="fav-img_container">
+                                <img src="assets/media/favorites/4_item.png" alt="" class="fav-img">
+                                <img src="assets/media/favorites/4_item-hover.png" alt="" class="fav-img img_hover">
+                                <img class="icon-heart" width="35" height="35"
+                                    src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
+                                    alt="like--v1" />
+                                <img class="icon-cart" width="30" height="30"
+                                    src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
+                                    alt="shopping-basket-2--v2" />
+                            </div>
+        
+                            <div class="fav_text_container">
+                                <h2 class="title-3">Персиковый румянец</h2>
+                                <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234857</p></pre>
+                                <img src="assets/media/icons/button_tocart4.svg" alt="" class="fav-btn">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer container">
+        <div class="footer_left">
+            <img src="assets/media/logo/logo.svg" alt="" class="logo">
+
+            <div class="footer_contacts">
+                <div class="footer-tel">
+                    <img src="assets/media/footer/call-calling.svg" alt="">
+
+                    <div class="text_info">
+                        <p>Контактный телефон</p>
+                        <a href="tel: 78123090934" class="desc">+ 7 (812) 309-09-34</a>
+                        <a href="tel: 78123090934" class="desc">+ 7 (965) 084-029-09</a>
+                    </div>
+                </div>
+
+                <div class="footer-tel">
+                    <img src="assets/media/footer/Icon.png" alt="">
+                    <div class="text_info">
+                        <p>Электронная почта</p>
+                        <a href="mailto: tustin78@mail.ru" class="desc">tustin78@mail.ru</a>
+                        <a href="mailto: info@tustin.ru" class="desc">info@tustin.ru</a>
+                    </div>
+                </div>
+            </div>
+            <p class="h-nav_item">© 2025, Пирогова Дарья Денисовна</p>
+        </div>
+
+        <div class="footer_right">
+            <h2 class="title-2 left">Первый заказ?</h2>
+            <input type="text" placeholder="Введите email">
+            <img src="assets/media/icons/button_footer.svg" alt="" class="footer-btn">
+
+            <nav class="h-nav">
+                <a href="" class="h-nav_item">Главная</a>
+                <a href="" class="h-nav_item">Каталог</a>
+                <a href="" class="h-nav_item">Советы</a>
+                <a href="" class="h-nav_item">FAQ</a>
+                <a href="" class="h-nav_item">О нас</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+
+</html>
