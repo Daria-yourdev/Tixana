@@ -95,6 +95,181 @@
     align-items: center;
 }
 
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width: 1000px) {
+
+    .container,
+    .container_wide {
+        padding: 0px 15px;
+        margin: 0;
+        max-width: 1000px;
+    }
+
+    .h-tel,
+    .btn_mob,
+    .arrow-left,
+    .arrow-right,
+    .btn_pl {
+        display: none;
+    }
+
+    .h-nav {
+        padding-right: 0px;
+    }
+
+    /* banner */
+    .banner {
+        margin-right: 15px;
+    }
+
+    .b_left-top {
+        width: 420px;
+    }
+
+    .banner_content {
+        overflow: hidden;
+    }
+
+    /* favorites */
+    .fav-cards {
+        flex-wrap: wrap;
+        gap: 40px;
+        max-width: 712px;
+        margin: 0 auto !important;
+    }
+
+    /* adv */
+    .adv {
+        margin: 0px 15px;
+        justify-content: flex-start !important;
+        gap: 540px;
+    }
+
+    .adv_items p {
+        width: 210px;
+    }
+
+    .adv_img {
+        left: 260px !important;
+    }
+
+    /* recepts */
+    .recepts {
+        margin: 0 auto !important;
+        justify-content: center !important;
+        padding-left: 40px !important;
+    }
+
+    .rec-card {
+        width: 500px !important;
+    }
+
+    .rec_text {
+        width: 82% !important;
+    }
+
+    .rec-img {
+        left: 45px;
+    }
+
+    /* faq */
+    .questins_content {
+        width: 970px !important;
+        margin: 0px 15px !important;
+    }
+
+    .question {
+        width: 100% !important;
+    }
+
+    .footer-tel .desc {
+        font-size: 18px;
+    }
+
+    .footer_contacts {
+        gap: 40px !important;
+    }
+
+    .footer {
+        margin: 40px 0px;
+    }
+
+    /* catalog */
+    .catalog_card {
+        width: 300px !important;
+    }
+
+
+    /* about */
+    .about_content {
+        overflow: hidden;
+    }
+
+    .about_right {
+        width: 100% !important;
+        background-color: #857B3E;
+        border: 10px !important;
+    }
+
+    .about_content {
+        background-color: #F6ECEB !important;
+    }
+
+    .adv_items .desc img,
+    .about-img {
+        display: none;
+    }
+
+    /* profile */
+    .profile_left {
+        border-radius: 60px 200px 0px 200px !important;
+    }
+
+    /* cart */
+    .cart_content {
+        flex-direction: column;
+        gap: 37px;
+    }
+
+    .cart_item {
+        width: 100% !important;
+    }
+
+    .cart_exe {
+        width: 100% !important;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cart_exe-text {
+        width: 100%;
+    }
+
+    /* product */
+    .product-img_container {
+        width: 430px !important;
+        display: flex;
+        align-items: center;
+    }
+
+    .product-img_container .fav-img {
+        position: absolute;
+        width: 530px !important;
+        left: -30px;
+    }
+
+    .product_content {
+        gap: 50px !important;
+    }
+}
+
+
 @media (max-width: 390px) {
 
     .container,
@@ -104,7 +279,6 @@
         max-width: 390px
     }
 
-    /* Header */
     .header {
         padding: 10px 0px;
         justify-content: space-between;
@@ -166,7 +340,6 @@
         transform: translateY(-9px) rotate(-45deg);
     }
 
-    /* banner */
     .banner,
     .product {
         padding-top: 68px !important;
@@ -195,8 +368,6 @@
     .title_gap {
         padding: 46px 0px !important;
     }
-
-    /* favotites */
     .favorites {
         padding-top: 80px !important;
     }
@@ -238,7 +409,6 @@
         display: none;
     }
 
-    /* adv */
     .adv_img {
         display: none;
     }
@@ -255,7 +425,6 @@
         margin-bottom: 0px !important;
     }
 
-    /* recepts */
     .recepts .yell_dec,
     .recepts .green_dec {
         display: none;
@@ -283,7 +452,6 @@
         display: none;
     }
 
-    /* faq */
     .questions {
         margin: 80px 0px !important;
     }
@@ -307,7 +475,6 @@
         font-size: 20px;
     }
 
-    /* footer */
     .footer {
         flex-direction: column;
         margin: 40px 0px !important;
@@ -349,7 +516,6 @@
         display: none;
     }
 
-    /* catalog */
     .catalog {
         padding-top: 110px !important;
     }
@@ -367,7 +533,6 @@
         display: flex !important;
     }
 
-    /* abuot */
     .about_content {
         flex-direction: column;
         padding: 0px !important;
@@ -455,7 +620,6 @@
         display: none;
     }
 
-    /* product */
     .product_content {
         flex-direction: column;
         padding-bottom: 80px;
@@ -494,7 +658,6 @@
         font-size: 14px;
     }
 
-    /* profile */
     .profile_left {
         width: 100% !important;
         border-radius: 40px 130px 0px 130px !important;
@@ -511,20 +674,6 @@
         width: 110% !important;
     }
 }
-
-@media (hover: none) {
-
-    /* Элементы, у которых нужно убрать hover */
-    .product-img_container,
-    .img_hover,
-    .fav-img {
-        background-color: initial;
-        color: initial;
-        transform: none;
-        opacity: 1;
-    }
-}
-
 
 /* banner */
 .banner {
