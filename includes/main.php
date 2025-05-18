@@ -14,6 +14,44 @@
 
 <body>
 
+<<<<<<< HEAD:includes/main.php
+=======
+    <!-- header -->
+    <header class="header">
+        <div class="header-content container_wide">
+            <img src="assets/media/logo/logo.svg" alt="" onclick="window.location.href='index.html'" class="logo">
+
+            <input type="checkbox" id="burger-toggle" class="burger-toggle">
+            <label for="burger-toggle" class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="main-nav">
+
+                <div class="h-nav">
+                    <a href="index.html" class="h-nav_item">Главная</a>
+                    <a href="catalog.html" class="h-nav_item">Каталог</a>
+                    <a href="#receps" class="h-nav_item">Советы</a>
+                    <a href="#questions" class="h-nav_item">FAQ</a>
+                    <a href="about.html" class="h-nav_item">О нас</a>
+                </div>
+
+                <a href="tel: 79650842929" class="h-tel"><img src="assets/media/icons/tel.svg" alt="">+7 (965)
+                    084-29-29</a>
+
+                <img src="assets/media/icons/button_cart.svg" alt="" class="header-btn"
+                    onclick="window.location.href='cart.html'">
+
+                <a href="profile.html" class="h-nav_item">Профиль</a>
+                <label for="auth-toggle" class="h-nav_item">Войти</label>
+                <a href="admin.html" class="h-nav_item btn_mob">Я админ</a>
+            </nav>
+        </div>
+    </header>
+
+>>>>>>> 41af80474d942d21fc5da17f74398ca8d070d058:index.html
     <main>
         <!-- banner -->
         <div class="banner">
@@ -166,7 +204,7 @@
                     </div>
                 </div>
 
-                <div class="rec-card yell_dec">
+                <div class="rec-card yell_dec btn_pl">
                     <img src="assets/media/recepts/tea-2.png" alt="" class="rec-img">
 
                     <div class="rec_text">
@@ -180,7 +218,7 @@
                     </div>
                 </div>
 
-                <div class="rec-card green_dec">
+                <div class="rec-card green_dec btn_pl">
                     <img src="assets/media/recepts/tea-3.png" alt="" class="rec-img">
 
                     <div class="rec_text">
@@ -268,6 +306,54 @@
             </script>
         </div>
     </main>
+<<<<<<< HEAD:includes/main.php
+=======
+
+    <!-- footer -->
+    <footer class="footer container">
+        <div class="footer_left">
+            <img src="assets/media/logo/logo.svg" alt="" class="logo">
+
+            <div class="footer_contacts">
+                <div class="footer-tel">
+                    <img src="assets/media/footer/call-calling.svg" alt="">
+
+                    <div class="text_info">
+                        <p>Контактный телефон</p>
+                        <a href="tel: 78123090934" class="desc">+ 7 (812) 309-09-34</a>
+                        <a href="tel: 78123090934" class="desc">+ 7 (965) 084-029-09</a>
+                    </div>
+                </div>
+
+                <div class="footer-tel">
+                    <img src="assets/media/footer/Icon.png" alt="">
+                    <div class="text_info">
+                        <p>Электронная почта</p>
+                        <a href="mailto: tustin78@mail.ru" class="desc">tustin78@mail.ru</a>
+                        <a href="mailto: info@tustin.ru" class="desc">info@tustin.ru</a>
+                    </div>
+                </div>
+            </div>
+            <p class="h-nav_item fot_mob">© 2025, Пирогова Дарья Денисовна</p>
+        </div>
+
+        <div class="footer_right">
+            <h2 class="title-2 left">Первый заказ?</h2>
+            <input type="text" placeholder="Введите email">
+            <img src="assets/media/icons/button_footer.svg" alt="" class="footer-btn">
+
+            <nav class="h-nav">
+                <a href="" class="h-nav_item">Главная</a>
+                <a href="" class="h-nav_item">Каталог</a>
+                <a href="" class="h-nav_item">Советы</a>
+                <a href="" class="h-nav_item">FAQ</a>
+                <a href="" class="h-nav_item">О нас</a>
+            </nav>
+
+            <p class="h-nav_item_mob">© 2025, Пирогова Дарья Денисовна</p>
+        </div>
+    </footer>
+>>>>>>> 41af80474d942d21fc5da17f74398ca8d070d058:index.html
 
 </body>
 
