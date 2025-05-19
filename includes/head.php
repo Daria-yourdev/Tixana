@@ -8,7 +8,7 @@ if (isset($_SESSION['user_id'])) {
     $id = (int)$_SESSION['user_id'];
     $stmt = $database->prepare("SELECT * FROM users WHERE user_id = ?");
     $stmt->execute([$id]);
-    $USER = $stmt->fetch(PDO::FETCH_ASSOC);
+    $USER = $stmt->fetch();
 }
 
 if (isset($_GET['exit'])) {

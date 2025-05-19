@@ -72,8 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $image_hover = $uniqueName;
             if (!move_uploaded_file($_FILES['image_hover']['tmp_name'], $dir)) {
                 $errors[] = 'Не удалось загрузить файл image_hover';
-            } else if (file_exists($uploadDir . '/' . $product['image-hover'])) {
-                unlink($uploadDir . '/' . $product['image-hover']);
+            } else if (file_exists($uploadDir . '/' . $product['image_hover'])) {
+                unlink($uploadDir . '/' . $product['image_hover']);
             }
         }
     }
@@ -83,13 +83,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($image_hover)) {
-        $image_hover = $product['image-hover'];
+        $image_hover = $product['imag_-hover'];
     }
 
     if (empty($errors)) {
         $stmt = $database->prepare("UPDATE products SET 
             title = ?, sort = ?, article = ?, fortress = ?, smell = ?, aftertaste = ?, price = ?, 
-            image = ?, `image-hover` = ? WHERE id = ?");
+            image = ?, `image_hover` = ? WHERE id = ?");
         $stmt->execute([$title, $sort, $article, $fortress, $smell, $aftertaste, $price, $image, $image_hover, $id]);
 
         header('Location: ./?page=admin');
@@ -280,7 +280,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <?php if (!empty($product['image-hover'])): ?>
                                 <div style="margin-top: 10px;">
                                     <small>Текущее изображение:</small><br>
-                                    <img src="../uploads/<?= htmlspecialchars($product['image-hover']) ?>" width="100" style="margin-top: 5px;">
+                                    <img src="../uploads/<?= htmlspecialchars($product['image_hover']) ?>" width="100" style="margin-top: 5px;">
                                 </div>
                             <?php endif; ?>
                         </div>

@@ -1,3 +1,17 @@
+<?php
+
+session_start();
+
+include('includes/head.php');
+
+if (isset($_SESSION['user_id'])) {
+    $stmt = $database->prepare("SELECT * FROM users WHERE user_id = ?");
+    $stmt->execute([$_SESSION['user_id']]);
+    $USER = $stmt->fetch();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +59,7 @@
                             onclick="window.location.href='./?page=cart'">
 
                         <a href="./?page=profile" class="h-nav_item">Профиль</a>
-                        
+
                     <?php endif; ?>
 
                     <a class="h-nav_item" href="?exit">Выйти</a>

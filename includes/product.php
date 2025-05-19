@@ -8,6 +8,46 @@ if (!$product) {
     exit;
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_id'])) {
+    $delete_id = $_POST['delete_id'];
+    if (!empty($delete_id)) {
+        unlink($product['image']);
+        $sql = "DELETE FROM products WHERE id =:id";
+        $stmt = $database->prepare($sql);
+        $stmt->bindParam(':id', $delete_id);
+
+        if ($stmt->execute()) {
+            header("Location: ./");
+            exit;
+        } else {
+            echo 'Ошибка удаления';
+        }
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    $user_id = $USER['user_id'] ?? null;
+
+    if ($user_id && $product_id) {
+        $stmt = $database->prepare("SELECT id FROM carts WHERE user_id = ? AND product_id = ?");
+        $stmt->execute([$user_id, $product_id]);
+        $cartItem = $stmt->fetch();
+
+        if ($cartItem) {
+            $stmt = $database->prepare("UPDATE carts SET count = count + 1 WHERE id = ?");
+            $stmt->execute([$cartItem['id']]);
+        } else {
+            $stmt = $database->prepare("INSERT INTO carts (user_id, product_id, count) VALUES (?, ?, 1)");
+            $stmt->execute([$user_id, $product_id]);
+        }
+
+        header('Location: ./?page=cart');
+        exit;
+    }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -90,7 +130,23 @@ if (!$product) {
                         <span class="subtitile_desc">/ 100 г</span>
                     </div>
 
-                    <img src="assets/media/product/product-btn.svg" alt="" class="product-btn">
+                    <?php if (isset($USER['role'])): ?>
+
+                        <form action="" method="post">
+                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                            <button type="submit" name="add_to_cart" style='border: none;'><img src="assets/media/product/product-btn.svg" alt="" class="product-btn"></button>
+                        </form>
+                    <?php endif; ?>
+
+                    <?php if (isset($USER['role']) && $USER['role'] == 'admin'): ?>
+                        <a class="border_bottom edit_btn" href="./?page=edit-product&id=<?= $product['id'] ?>">Редактировать</a>
+                        <form action="" method="post">
+                            <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
+                            <button class="exit_btn"
+                                onclick="return confirm('Вы действительно хотите удалить?')">Удалить
+                            </button>
+                        </form>
+                    <?php endif; ?>
                 </div>
             </div>
 

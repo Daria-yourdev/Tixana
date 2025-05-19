@@ -4,6 +4,28 @@ include('connection/database.php');
 
 $products = $database->query('SELECT * FROM products')->fetchAll();
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_to_cart'])) {
+    $product_id = $_POST['product_id'];
+    $user_id = $USER['user_id'] ?? null;
+
+    if ($user_id && $product_id) {
+        $stmt = $database->prepare("SELECT id FROM carts WHERE user_id = ? AND product_id = ?");
+        $stmt->execute([$user_id, $product_id]);
+        $cartItem = $stmt->fetch();
+
+        if ($cartItem) {
+            $stmt = $database->prepare("UPDATE carts SET count = count + 1 WHERE id = ?");
+            $stmt->execute([$cartItem['id']]);
+        } else {
+            $stmt = $database->prepare("INSERT INTO carts (user_id, product_id, count) VALUES (?, ?, 1)");
+            $stmt->execute([$user_id, $product_id]);
+        }
+
+        header('Location: ./?page=cart');
+        exit;
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -124,7 +146,24 @@ $products = $database->query('SELECT * FROM products')->fetchAll();
                                         <div class="fav_text_container">
                                             <h2 class="title-3"><?= $product['title'] ?></h2>
                                             <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: <?= $product['article'] ?></p></pre>
-                                            <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
+
+                                            <?php if (isset($USER['role'])): ?>
+
+                                                <form action="?page=catalog" method="post">
+                                                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                    <button type="submit" name="add_to_cart" style='border: none;'><img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn"></button>
+                                                </form>
+                                            <?php endif; ?>
+
+                                            <?php if (isset($USER['role']) && $USER['role'] == 'admin'): ?>
+                                                <a class="border_bottom edit_btn" href="./?page=edit-product&id=<?= $product['id'] ?>">Редактировать</a>
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
+                                                    <button class="exit_btn"
+                                                        onclick="return confirm('Вы действительно хотите удалить?')">Удалить
+                                                    </button>
+                                                </form>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
 
@@ -145,7 +184,24 @@ $products = $database->query('SELECT * FROM products')->fetchAll();
                                         <div class="fav_text_container">
                                             <h2 class="title-3 white"><?= $product['title'] ?></h2>
                                             <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: <?= $product['article'] ?></span></p></pre>
-                                            <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
+
+                                            <?php if (isset($USER['role'])): ?>
+
+                                                <form action="?page=catalog" method="post">
+                                                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                    <button type="submit" name="add_to_cart" style='border: none;'><img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn"></button>
+                                                </form>
+                                            <?php endif; ?>
+
+                                            <?php if (isset($USER['role']) && $USER['role'] == 'admin'): ?>
+                                                <a class="border_bottom edit_btn" href="./?page=edit-product&id=<?= $product['id'] ?>">Редактировать</a>
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
+                                                    <button class="exit_btn"
+                                                        onclick="return confirm('Вы действительно хотите удалить?')">Удалить
+                                                    </button>
+                                                </form>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
 
@@ -166,7 +222,24 @@ $products = $database->query('SELECT * FROM products')->fetchAll();
                                         <div class="fav_text_container">
                                             <h2 class="title-3 white"><?= $product['title'] ?></h2>
                                             <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: <?= $product['article'] ?></p></pre>
-                                            <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
+
+                                            <?php if (isset($USER['role'])): ?>
+
+                                                <form action="?page=catalog" method="post">
+                                                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                    <button type="submit" name="add_to_cart" style='border: none;'><img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn"></button>
+                                                </form>
+                                            <?php endif; ?>
+
+                                            <?php if (isset($USER['role']) && $USER['role'] == 'admin'): ?>
+                                                <a class="border_bottom edit_btn" href="./?page=edit-product&id=<?= $product['id'] ?>">Редактировать</a>
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
+                                                    <button class="exit_btn"
+                                                        onclick="return confirm('Вы действительно хотите удалить?')">Удалить
+                                                    </button>
+                                                </form>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
 
@@ -187,85 +260,25 @@ $products = $database->query('SELECT * FROM products')->fetchAll();
                                         <div class="fav_text_container">
                                             <h2 class="title-3"><?= $product['title'] ?></h2>
                                             <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: <?= $product['article'] ?></p></pre>
-                                            <img src="assets/media/icons/button_tocart4.svg" alt="" class="fav-btn">
+
+                                            <?php if (isset($USER['role'])): ?>
+                                                <form action="" method="post">
+                                                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                                    <button type="submit" name="add_to_cart" style='border: none;'><img src="assets/media/icons/button_tocart4.svg" alt="" class="fav-btn"></button>
+                                                </form>
+                                            <?php endif; ?>
+
+                                            <?php if (isset($USER['role']) && $USER['role'] == 'admin'): ?>
+                                                <a class="border_bottom edit_btn" href="./?page=edit-product&id=<?= $product['id'] ?>">Редактировать</a>
+                                                <form action="?page=catalog" method="post">
+                                                    <input type="hidden" name="delete_id" value="<?= $product['id'] ?>">
+                                                    <button class="exit_btn"
+                                                        onclick="return confirm('Вы действительно хотите удалить?')">Удалить
+                                                    </button>
+                                                </form>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
-
-                                    <!-- <div class="fav-card pink_dec catalog_card" onclick="window.location.href='product.html'">
-                                        <div class="fav-img_container">
-                                            <img src="assets/media/favorites/1_item.png" alt="" class="fav-img">
-                                            <img src="assets/media/favorites/1_item-hover.png" alt="" class="fav-img img_hover">
-                                            <img class="icon-heart" width="35" height="35"
-                                                src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
-                                                alt="like--v1" />
-                                            <img class="icon-cart" width="30" height="30"
-                                                src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
-                                                alt="shopping-basket-2--v2" />
-                                        </div>
-
-                                        <div class="fav_text_container">
-                                            <h2 class="title-3">Медовый закат</h2>
-                                            <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234657</p></pre>
-                                            <img src="assets/media/icons/button_tocart.svg" alt="" class="fav-btn">
-                                        </div>
-                                    </div>
-
-                                    <div class="fav-card yell_dec catalog_card" onclick="window.location.href='product.html'">
-                                        <div class="fav-img_container">
-                                            <img src="assets/media/favorites/2_item.png" alt="" class="fav-img">
-                                            <img src="assets/media/favorites/2_item-hover.png" alt="" class="fav-img img_hover">
-                                            <img class="icon-heart" width="35" height="35"
-                                                src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
-                                                alt="like--v1" />
-                                            <img class="icon-cart" width="30" height="30"
-                                                src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
-                                                alt="shopping-basket-2--v2" />
-                                        </div>
-
-                                        <div class="fav_text_container">
-                                            <h2 class="title-3 white">Шёпот сакуры</h2>
-                                            <pre><p class="subtitile white" style="opacity: 0.7;">В наличии    Артикул: 234657</span></p></pre>
-                                            <img src="assets/media/icons/button_tocart2.svg" alt="" class="fav-btn">
-                                        </div>
-                                    </div>
-
-                                    <div class="fav-card green_dec catalog_card" onclick="window.location.href='product.html'">
-                                        <div class="fav-img_container">
-                                            <img src="assets/media/favorites/3_item.png" alt="" class="fav-img">
-                                            <img src="assets/media/favorites/3_item-hover.png" alt="" class="fav-img img_hover">
-                                            <img class="icon-heart" width="35" height="35"
-                                                src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
-                                                alt="like--v1" />
-                                            <img class="icon-cart" width="30" height="30"
-                                                src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
-                                                alt="shopping-basket-2--v2" />
-                                        </div>
-
-                                        <div class="fav_text_container">
-                                            <h2 class="title-3 white">Тайга</h2>
-                                            <pre><p class="subtitile white" style="opacity: 0.7;">Нет на складе    Артикул: 2757</p></pre>
-                                            <img src="assets/media/icons/button_tocart3.svg" alt="" class="fav-btn">
-                                        </div>
-                                    </div>
-
-                                    <div class="fav-card white_dec catalog_card" onclick="window.location.href='product.html'">
-                                        <div class="fav-img_container">
-                                            <img src="assets/media/favorites/4_item.png" alt="" class="fav-img">
-                                            <img src="assets/media/favorites/4_item-hover.png" alt="" class="fav-img img_hover">
-                                            <img class="icon-heart" width="35" height="35"
-                                                src="https://img.icons8.com/fluency-systems-regular/48/FFFFFF/like--v1.png"
-                                                alt="like--v1" />
-                                            <img class="icon-cart" width="30" height="30"
-                                                src="https://img.icons8.com/pastel-glyph/100/FFFFFF/shopping-basket-2--v2.png"
-                                                alt="shopping-basket-2--v2" />
-                                        </div>
-
-                                        <div class="fav_text_container">
-                                            <h2 class="title-3">Персиковый румянец</h2>
-                                            <pre><p class="subtitile" style="opacity: 0.7;">В наличии    Артикул: 234857</p></pre>
-                                            <img src="assets/media/icons/button_tocart4.svg" alt="" class="fav-btn">
-                                        </div>
-                                    </div> -->
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else : ?>
